@@ -33,5 +33,76 @@
     <button class="scissors"></button>
   </div>
 
+<script>
+const player1 = document.querySelector("#player1");
+const player2 = document.querySelector("#player2");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+rock.addEventListener("mousedown", clickRock);
+paper.addEventListener("mousedown", clickPaper);
+scissors.addEventListener("mousedown", clickScissors);
+
+function clickRock() {
+player1.classList.remove("shake")
+player1.classList.add("shake")
+player2.classList.remove("shake")
+player2.classList.add("shake")
+player1.addEventListener("animationend", showRock);
+player2.addEventListener("animationend", showRandom);
+}
+function showRock() {
+  player1.classList.remove("shake")
+player1.classList.remove("paper")
+player1.classList.remove("scissors")
+player1.classList.remove("rock")
+player1.classList.add("rock")
+}
+
+function clickPaper() {
+player1.classList.remove("shake")
+player1.classList.add("shake")
+player2.classList.remove("shake")
+player2.classList.add("shake")
+player1.addEventListener("animationend", showPaper);
+player2.addEventListener("animationend", showRandom);
+}
+function showPaper() {
+  player1.classList.remove("shake")
+player1.classList.remove("rock")
+player1.classList.remove("scissors")
+player1.classList.remove("paper")
+player1.classList.add("paper")
+}
+
+function clickScissors() {
+player1.classList.remove("shake")
+player1.classList.add("shake")
+player2.classList.remove("shake")
+player2.classList.add("shake")
+player1.addEventListener("animationend", showScissors);
+player2.addEventListener("animationend", showRandom);
+}
+function showScissors(){
+  player1.classList.remove("shake")
+player1.classList.remove("paper")
+player1.classList.remove("rock")
+player1.classList.remove("scissors")
+player1.classList.add("scissors")
+}
+
+function showRandom() {
+  var availableMoves = ['rock','paper','scissors'],
+      randomNumber = Math.floor(Math.random() * availableMoves.length),
+      opponentMove = availableMoves[randomNumber];
+  
+  return opponentMove;
+}
+
+// random
+// player2.classList.add("rock" + (Math.floor(Math.random() * 9)));
+</script>
+
 </body>
 </html>
