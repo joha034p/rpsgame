@@ -53,7 +53,7 @@ player1.addEventListener("animationend", showRock);
 player2.addEventListener("animationend", showRandom);
 }
 function showRock() {
-  player1.classList.remove("shake")
+player1.classList.remove("shake")
 player1.classList.remove("paper")
 player1.classList.remove("scissors")
 player1.classList.remove("rock")
@@ -69,7 +69,7 @@ player1.addEventListener("animationend", showPaper);
 player2.addEventListener("animationend", showRandom);
 }
 function showPaper() {
-  player1.classList.remove("shake")
+player1.classList.remove("shake")
 player1.classList.remove("rock")
 player1.classList.remove("scissors")
 player1.classList.remove("paper")
@@ -85,7 +85,7 @@ player1.addEventListener("animationend", showScissors);
 player2.addEventListener("animationend", showRandom);
 }
 function showScissors(){
-  player1.classList.remove("shake")
+player1.classList.remove("shake")
 player1.classList.remove("paper")
 player1.classList.remove("rock")
 player1.classList.remove("scissors")
@@ -93,9 +93,13 @@ player1.classList.add("scissors")
 }
 
 function showRandom() {
-  var availableMoves = ['rock','paper','scissors'],
+player2.classList.remove("shake")
+player2.classList.remove("rock")
+player2.classList.remove("paper")
+player2.classList.remove("scissors")
+  let availableMoves = ['rock','paper','scissors'],
       randomNumber = Math.floor(Math.random() * availableMoves.length),
-      opponentMove = availableMoves[randomNumber];
+      player2 = availableMoves[randomNumber];
   
   return opponentMove;
 }
